@@ -16,6 +16,12 @@
 
 / {
     behaviors {
+	&lt {
+            flavor = "balanced";
+            tapping-term-ms = <320>;
+            quick-tap-ms = <150>;
+        };
+
         ht: hold_tap {
             label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
