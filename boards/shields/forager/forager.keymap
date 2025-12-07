@@ -154,8 +154,3 @@
     };
 };
 
-&lt {
-    // require-prior-idle-ms = <100>;
-    tapping-term-ms = <150>;
-    quick-tap-ms = <200>;
-};
