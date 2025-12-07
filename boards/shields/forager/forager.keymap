@@ -14,15 +14,9 @@
 #define NAV 3
 #define SET 4
 
-lt {
-    quick-tap-ms = <200>;
-    tapping-term-ms = <150>;
-    flavor = "balanced";
-};
-
 / {
     behaviors {
-        ht: hold_tap {
+	ht: hold_tap {
             label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -158,4 +152,10 @@ lt {
             >;
         };
     };
+};
+
+&lt {
+    // require-prior-idle-ms = <100>;
+    tapping-term-ms = <150>;
+    quick-tap-ms = <200>;
 };
