@@ -1,5 +1,11 @@
+config SHIELD_FORAGER_LEFT_PERIPHERAL
+    def_bool $(shields_list_contains,forager_left_peripheral)
+
 config SHIELD_FORAGER_LEFT
     def_bool $(shields_list_contains,forager_left)
 
 config SHIELD_FORAGER_RIGHT
     def_bool $(shields_list_contains,forager_right)
+
+config SHIELD_FORAGER_DONGLE
+    def_bool $(shields_list_contains,forager_dongle) 
