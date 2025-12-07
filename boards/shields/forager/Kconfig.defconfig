@@ -4,7 +4,7 @@
 if SHIELD_FORAGER_DONGLE
 
 config ZMK_KEYBOARD_NAME
-    default "Forager Dongle"
+    default "Forager"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -42,23 +42,9 @@ endif
 
 
 # ----------------------------
-# PERIPHERAL LEFT (DONGLE MODE)
-# ----------------------------
-if SHIELD_FORAGER_LEFT_PERIPHERAL
-
-config ZMK_KEYBOARD_NAME
-    default "Forager Left Peripheral"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default n
-
-endif
-
-
-# ----------------------------
 # SPLIT ENABLED FOR ALL HALVES
 # ----------------------------
-if SHIELD_FORAGER_LEFT || SHIELD_FORAGER_RIGHT || SHIELD_FORAGER_LEFT_PERIPHERAL
+if SHIELD_FORAGER_LEFT || SHIELD_FORAGER_RIGHT || SHIELD_FORAGER_LEFT_PERIPHERAL || SHIELD_FORAGER_DONGLE
 
 config ZMK_SPLIT
     default y
