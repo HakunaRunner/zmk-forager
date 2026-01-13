@@ -25,26 +25,9 @@ endif
 
 
 # ----------------------------
-# NORMAL LEFT (CENTRAL)
-# ----------------------------
-if SHIELD_FORAGER_LEFT
-
-config ZMK_KEYBOARD_NAME
-    default "Forager"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-config ZMK_STUDIO
-    default y
-
-endif
-
-
-# ----------------------------
 # SPLIT ENABLED FOR ALL HALVES
 # ----------------------------
-if SHIELD_FORAGER_LEFT || SHIELD_FORAGER_RIGHT || SHIELD_FORAGER_LEFT_PERIPHERAL || SHIELD_FORAGER_DONGLE
+if SHIELD_FORAGER_LEFT || SHIELD_FORAGER_RIGHT || SHIELD_FORAGER_DONGLE
 
 config ZMK_SPLIT
     default y
