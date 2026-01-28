@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 3
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 15
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -36,7 +36,7 @@
         };
 
         msc {
-            acceleration-exponent = <2>;
+            acceleration-exponent = <0>;
             time-to-max-speed-ms = <0>;
             delay-ms = <0>;
         };
