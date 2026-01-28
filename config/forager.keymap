@@ -1,10 +1,12 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
+
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
@@ -16,7 +18,7 @@
 
 / {
     behaviors {
-	ht: hold_tap {
+        ht: hold_tap {
             label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -74,36 +76,6 @@
         };
     };
 
-    macros {
-        win_desk_left: win_desk_left {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(LC(LEFT))>;
-            label = "WIN_DESK_LEFT";
-        };
-
-        win_desk_right: win_desl_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(LC(RIGHT))>;
-            label = "WIN_DESL_RIGHT";
-        };
-
-        mac_desk_left: mac_desk_left {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LEFT)>;
-            label = "MAC_DESK_LEFT";
-        };
-
-        mac_desk_right: mac_desk_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(RIGHT)>;
-            label = "MAC_DESK_RIGHT";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -118,39 +90,38 @@
 
         num {
             bindings = <
-&kp N1        &kp N2        &kp N3     &kp N4     &kp N5     &kp N6   &kp N7     &kp N8     &kp N9    &kp N0
-&kp LGUI      &kp LALT      &kp LCTRL  &kp LSHFT  &kp INS    &kp DEL  &kp RSHFT  &kp RCTRL  &kp LALT  &kp LGUI
-&kp F1        &kp F2        &kp F3     &kp F4     &kp F5     &kp F6   &kp F7     &kp F8     &kp F9    &kp F10
-                                       &trans     &trans     &trans   &trans
+&kp N1    &kp N2    &kp N3     &kp N4     &kp N5   &kp N6   &kp N7     &kp N8     &kp N9    &kp N0
+&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp INS  &kp DEL  &kp RSHFT  &kp RCTRL  &kp LALT  &kp LGUI
+&kp F1    &kp F2    &kp F3     &kp F4     &kp F5   &kp F6   &kp F7     &kp F8     &kp F9    &kp F10
+                               &trans     &trans   &trans   &trans
             >;
         };
 
         sym {
             bindings = <
-&kp EXCL  &kp AT    &kp HASH          &kp DLLR           &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTRK  &kp GRAVE  &kp TILDE
-&kp LBKT  &kp LT    &kp LPAR          &kp LBRC           &kp PLUS     &kp MINUS  &kp RBRC  &kp RPAR   &kp GT     &kp RBKT
-&kp BSLH  &kp PIPE  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp EQUAL    &kp UNDER  &none     &kp COMMA  &kp DOT    &kp FSLH
-                                      &trans             &trans       &trans     &trans
+&kp EXCL  &kp AT    &kp HASH          &kp DLLR           &kp PRCNT  &kp CARET  &kp AMPS  &kp ASTRK  &kp GRAVE  &kp TILDE
+&kp LBKT  &kp LT    &kp LPAR          &kp LBRC           &kp PLUS   &kp MINUS  &kp RBRC  &kp RPAR   &kp GT     &kp RBKT
+&kp BSLH  &kp PIPE  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp EQUAL  &kp UNDER  &none     &kp COMMA  &kp DOT    &kp FSLH
+                                      &trans             &trans     &trans     &trans
             >;
         };
 
         nav {
             bindings = <
-&none           &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &kp PRINTSCREEN         &kp CAPSLOCK     &mkp MB4  &mkp MB3  &mkp MB5   &none
-&win_desk_left  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &kp C_BRIGHTNESS_INC    &kp C_VOLUME_UP  &mkp MB1  &kp UP    &mkp MB2   &win_desk_right
-&kp HOME        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp C_BRIGHTNESS_DEC    &kp C_VOL_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
-                                                &trans           &trans                  &trans           &trans
+&none     &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &kp PRINTSCREEN       &kp CAPSLOCK     &mkp MB4  &mkp MB3  &mkp MB5   &none
+&none     &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &kp C_BRIGHTNESS_INC  &kp C_VOLUME_UP  &mkp MB1  &kp UP    &mkp MB2   &none
+&kp HOME  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp C_BRIGHTNESS_DEC  &kp C_VOL_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
+                                          &trans           &trans                &trans           &trans
             >;
         };
 
         set {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &sys_reset     &bootloader  &out OUT_USB  &out OUT_BLE  &bt BT_CLR
-&none         &none         &none         &none         &none           &studio_unlock &none        &none         &none         &none
-&none         &none         &none         &none         &none           &none          &none        &none         &none         &none
-                                          &trans        &trans          &trans         &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &sys_reset      &bootloader  &out OUT_USB  &out OUT_BLE  &bt BT_CLR
+&none         &none         &none         &none         &none         &studio_unlock  &none        &none         &none         &none
+&none         &none         &none         &none         &none         &none           &none        &none         &none         &none
+                                          &trans        &trans        &trans          &trans
             >;
         };
     };
 };
-
