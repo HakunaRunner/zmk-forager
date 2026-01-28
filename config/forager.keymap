@@ -1,7 +1,7 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 100
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 2
 
 #include <behaviors.dtsi>
@@ -108,8 +108,8 @@
 
         nav {
             bindings = <
-&none     &msc MOVE_LEFT  &none           &msc MOVE_RIGHT  &kp PRINTSCREEN       &kp CAPSLOCK     &mkp MB4  &mkp MB3  &mkp MB5   &none
-&none     &msc MOVE_UP    &mmv MOVE_UP    &msc MOVE_DOWN   &kp C_BRIGHTNESS_INC  &kp C_VOLUME_UP  &mkp MB1  &kp UP    &mkp MB2   &none
+&none     &msc MOVE_X(-20)  &none           &msc MOVE_X(20)  &kp PRINTSCREEN       &kp CAPSLOCK     &mkp MB4  &mkp MB3  &mkp MB5   &none
+&none     &msc MOVE_Y(25)    &mmv MOVE_UP    &msc MOVE_Y(-25)   &kp C_BRIGHTNESS_INC  &kp C_VOLUME_UP  &mkp MB1  &kp UP    &mkp MB2   &none
 &kp HOME  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp C_BRIGHTNESS_DEC  &kp C_VOL_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
                                           &trans           &trans                &trans           &trans
             >;
