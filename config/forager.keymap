@@ -1,8 +1,8 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 2
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 1
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -36,8 +36,8 @@
         };
 
         msc {
-            acceleration-exponent = <2>;
-            time-to-max-speed-ms = <250>;
+            acceleration-exponent = <3>;
+            time-to-max-speed-ms = <500>;
             delay-ms = <0>;
         };
     };
@@ -108,8 +108,8 @@
 
         nav {
             bindings = <
-&none     &msc MOVE_X(-20)  &none           &msc MOVE_X(20)  &kp PRINTSCREEN       &kp CAPSLOCK     &mkp MB4  &mkp MB3  &mkp MB5   &none
-&none     &msc MOVE_Y(25)    &mmv MOVE_UP    &msc MOVE_Y(-25)   &kp C_BRIGHTNESS_INC  &kp C_VOLUME_UP  &mkp MB1  &kp UP    &mkp MB2   &none
+&none     &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &kp PRINTSCREEN       &kp CAPSLOCK     &mkp MB4  &mkp MB3  &mkp MB5   &none
+&none     &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &kp C_BRIGHTNESS_INC  &kp C_VOLUME_UP  &mkp MB1  &kp UP    &mkp MB2   &none
 &kp HOME  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp C_BRIGHTNESS_DEC  &kp C_VOL_DN     &kp LEFT  &kp DOWN  &kp RIGHT  &kp END
                                           &trans           &trans                &trans           &trans
             >;
