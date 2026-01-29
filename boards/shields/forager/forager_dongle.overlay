@@ -1,6 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
-#include <forager.dtsi>
+#include "forager.dtsi"
 
 / {
     chosen {
