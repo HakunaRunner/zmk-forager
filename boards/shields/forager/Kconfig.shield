@@ -1,6 +1,9 @@
 config SHIELD_FORAGER_LEFT
     def_bool $(shields_list_contains,forager_left)
 
+config SHIELD_FORAGER_LEFT_CENTRAL
+    def_bool $(shields_list_contains,forager_left_central)
+
 config SHIELD_FORAGER_RIGHT
     def_bool $(shields_list_contains,forager_right)
 

@@ -5,6 +5,8 @@ include:
   - board: xiao_ble
     shield: forager_left rgbled_adapter
   - board: xiao_ble
+    shield: forager_left_central rgbled_adapter
+  - board: xiao_ble
     shield: forager_right rgbled_adapter
   - board: xiao_ble
     shield: settings_reset

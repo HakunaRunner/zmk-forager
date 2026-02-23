@@ -1,7 +1,7 @@
 # ----------------------------
-# DONGLE
+# SHARED CENTRAL
 # ----------------------------
-if SHIELD_FORAGER_DONGLE
+if SHIELD_FORAGER_DONGLE || SHIELD_FORAGER_LEFT_CENTRAL
 
 config ZMK_KEYBOARD_NAME
     default "Forager"
@@ -12,14 +12,33 @@ config ZMK_SPLIT_ROLE_CENTRAL
 config ZMK_STUDIO
     default y
 
-config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-    default 2
-
 config BT_MAX_CONN
     default 6
 
 config BT_MAX_PAIRED
     default 6
+
+endif
+
+# ----------------------------
+# DONGLE
+# ----------------------------
+
+if SHIELD_FORAGER_DONGLE
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
+endif
+
+# ----------------------------
+# LEFT CENTRAL
+# ----------------------------
+
+if SHIELD_FORAGER_LEFT_CENTRAL
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 1
 
 endif
 
